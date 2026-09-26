@@ -1,0 +1,415 @@
+.archivo-black-regular {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #0d0d12;
+    color: rgb(255, 241, 220);
+    position: relative;
+}
+
+.bg-fixed {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    background-image: url("assets/img/DeadlockWikiBG.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.bg-fixed::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 12.5%;
+    width: 75%;
+    height: 100vh;
+    background: rgba(10, 10, 14, 0.42);
+    border-left: 1px solid rgba(10, 10, 14, 0.8);
+    border-right: 1px solid rgba(10, 10, 14, 0.8);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-fixed > * {
+    position: relative;
+    z-index: 1;
+}
+
+.fixed {
+    position: relative;
+    width: 100%;
+    padding: 50px 0 80px;
+    background: transparent;
+    z-index: 1;
+}
+
+.fixed::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+.scroll,
+.heroes-container,
+.fixed2,
+.fixed3,
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+.scroll {
+    position: relative;
+    width: min(1200px, 85%);
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 100px;
+    padding: 40px 5% 30px;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.fixed2 {
+    width: 100%;
+    min-height: 100px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.center {
+    width: min(90%, 720px);
+    height: auto;
+    margin: 0;
+}
+
+h2 {
+    color: rgb(255, 241, 220);
+    width: 100%;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: clamp(20px, 2.2vw, 35px);
+    line-height: 1.4;
+}
+
+h2:last-child {
+    margin-bottom: 0;
+}
+
+.heroes {
+    display: block;
+    width: 100%;
+    border-radius: 100px;
+    height: auto;
+}
+
+.heroes-container {
+    position: relative;
+    width: min(1200px, 85%);
+    margin: 40px auto 0;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.section {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 16.6667%;
+    transition: background 0.2s;
+}
+
+.section:hover {
+    background: rgba(131, 8, 255, 0.162);
+}
+
+.section1 { left: 0%; }
+.section2 { left: 16.6667%; }
+.section3 { left: 33.3333%; }
+.section4 { left: 50%; }
+.section5 { left: 66.6667%; }
+.section6 { left: 83.3333%; }
+
+.section span {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 241, 220, 0.75);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(20px, 3vw, 56px);
+    opacity: 0;
+    transition: opacity 1000ms;
+    white-space: nowrap;
+}
+
+.section:hover span {
+    opacity: 1;
+}
+
+.fixed3 {
+    width: 100%;
+    height: 150px;
+    background: transparent;
+}
+
+.oldgods-link {
+    position: relative;
+    display: block;
+    width: min(1200px, 85%);
+    margin: 0 auto;
+}
+
+.oldgods-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    background: rgba(131, 8, 255, 0);
+    transition: background 0.2s;
+}
+
+.oldgods-link:hover::after {
+    background: rgba(131, 8, 255, 0.162);
+}
+
+@media (max-width: 1000px) {
+    .fixed {
+        padding-top: 35px;
+    }
+
+    .fixed::before {
+        left: 8%;
+        width: 84%;
+    }
+
+    .scroll {
+        width: 90%;
+        border-radius: 60px;
+    }
+
+    .heroes-container {
+        width: 90%;
+        border-radius: 60px;
+    }
+
+    .heroes {
+        border-radius: 60px;
+    }
+
+    h2 {
+        font-size: clamp(18px, 2.5vw, 28px);
+    }
+
+    .section span {
+        font-size: clamp(16px, 3vw, 40px);
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fixed {
+        padding-top: 25px;
+    }
+
+    .fixed::before {
+        left: 6%;
+        width: 88%;
+    }
+
+    .fixed2 {
+        min-height: 80px;
+        padding: 18px 0;
+    }
+
+    .scroll {
+        width: 90%;
+        padding: 24px 6% 20px;
+        border-radius: 35px;
+    }
+
+    h2 {
+        font-size: 16px;
+        line-height: 1.35;
+        margin-bottom: 18px;
+    }
+
+    .heroes-container {
+        width: 90%;
+        margin-top: 24px;
+        border-radius: 35px;
+    }
+
+    .heroes {
+        border-radius: 35px;
+    }
+
+    .section span {
+        font-size: 14px;
+        bottom: 10px;
+        letter-spacing: 0.04em;
+    }
+
+    .fixed3 {
+        height: 100px;
+    }
+
+    .oldgods-link {
+        width: 90%;
+    }
+}
+
+footer {
+  background-color: #0d0d12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.valve-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 180px;
+  width: min(180px, 32vw);
+  height: auto;
+  border-radius: 10px;
+}
+
+.oldgods-link img,
+.heroes {
+  width: 100%;
+  max-width: none;
+}
+
+.character-image {
+  border-radius: 0 30px 30px 0;
+}
+
+.page1-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 40px 0 0 0;
+    padding-left: 0;
+}
+
+.character-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0 30px 30px 0;
+    flex-shrink: 0;
+    margin-left: 0;
+}
+
+.character-header {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+}
+
+.character-header h1 {
+    margin: 0;
+    font-size: clamp(20px, 2vw, 32px);
+    line-height: 1.45;
+    text-align: left;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .page1-wrap {
+        flex-direction: column;
+        margin: 24px 0 0 0;
+    }
+
+    .character-image {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .character-header {
+        max-width: 100%;
+    }
+
+    .character-header h1 {
+        font-size: clamp(18px, 5vw, 28px);
+    }
+}
+
+.char-text {
+  background-color: rgba(131, 8, 255, 0.162);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.gun-img {
+  padding: 20px;
+    border-radius: 40px;
+
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1px;
+    margin: 40px auto 0;
+    flex-wrap: nowrap;
+}
+
+main img {
+    display: block;
+    width: 25%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    flex: 1 1 0;
+}
+
+@media (max-width: 800px) {
+    main {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    main img {
+        width: calc((100% - 12px) / 2);
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    main img {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.main {
+background-color:
+}
